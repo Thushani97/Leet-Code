@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.twoPointer.FindTheIndexOfTheFirstOccurance;
 import org.example.twoPointer.RemoveElement;
 
 import java.util.HashMap;
@@ -9,9 +10,14 @@ import java.util.Map;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        callRemoveElementMethod(new int[]{0,1,2,2,3,0,4,2}, 2);
-//        int [] out =twoSum(new int[]{3,2,4}, 6);//twoSum(new int[]{6,2,8,11,7,15 }, 9);
-//        System.out.println(removeDuplicates(new int[]{0,0,1,1,1,1,1,2,2,3,3,4})); ;
+//        callRemoveElementMethod(new int[]{0,1,2,2,3,0,4,2}, 2);
+        findTheIndexOfTheFirstOccurance("sadbutsad","sad");
+
+    }
+
+    public static void findTheIndexOfTheFirstOccurance(String hackStack, String needle){
+        FindTheIndexOfTheFirstOccurance fo = new FindTheIndexOfTheFirstOccurance();
+        System.out.println("output:" + fo.strStr("mississippi","issi"));
     }
 
     public static void callRemoveElementMethod(int[] nums, int val){
