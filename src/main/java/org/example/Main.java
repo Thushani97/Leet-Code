@@ -1,20 +1,27 @@
 package org.example;
 
 import org.example.twoPointer.FindTheIndexOfTheFirstOccurance;
+import org.example.twoPointer.MoveZeroes;
 import org.example.twoPointer.RemoveElement;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     static void main() {
 //        callRemoveElementMethod(new int[]{0,1,2,2,3,0,4,2}, 2);
-        findTheIndexOfTheFirstOccurance("sadbutsad","sad");
+//        findTheIndexOfTheFirstOccurance("sadbutsad","sad");
+        moveZeroes(new int[]{0,1,0,3,12});
+
 
     }
 
+    public static void moveZeroes(int[] hackStack){
+        MoveZeroes moveZeroes = new MoveZeroes();
+        moveZeroes.moveZeroes(new int[] {0,1,0,3,12});
+    }
     public static void findTheIndexOfTheFirstOccurance(String hackStack, String needle){
         FindTheIndexOfTheFirstOccurance fo = new FindTheIndexOfTheFirstOccurance();
         System.out.println("output:" + fo.strStr("mississippi","issi"));
@@ -24,19 +31,6 @@ public class Main {
         RemoveElement removeElement = new RemoveElement();
         System.out.println("output: "+removeElement.removeElement(nums,val));
     }
-//    *********** TWO POINTER METHOD *************
-    public static int removeDuplicates(int[] nums) {
-        int i =0;
-        for (int j = 0; j < nums.length; j++) {
-            if (nums[j] != nums[i]) {
-                i++;
-                nums[i] = nums[j];
-
-            }
-        }
-        return i+1;
-    }
-
 
 
     public static int removeDuplicates2(int[] nums) {
@@ -47,7 +41,6 @@ public class Main {
                 j++;
             }
         }
-
         return j;
     }
     public static int removeDuplicates1(int[] nums) {

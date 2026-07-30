@@ -22,7 +22,6 @@ System.out.println(s1.equals(s2)); // true ✅
 👉 .equals() compares actual characters inside
 
  */
-
     public int strStr(String haystack, String needle) {
 
         int lenHaystack = haystack.length();
