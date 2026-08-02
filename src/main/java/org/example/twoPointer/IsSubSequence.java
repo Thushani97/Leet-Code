@@ -19,6 +19,9 @@ public class IsSubSequence {
         char [] tArray = t.toCharArray();// ['a','h','b','g','d','c'] -ahbgdc
         int sIndex= 0;
         int tIndex= 0;
+
+        if(s.isEmpty()) return true; // if(s.length()==0)
+
         while (sIndex<s.length() && tIndex<t.length()){ //sArray.length!=0 && sIndex!=s.length()
             if (sArray[sIndex]==tArray[tIndex]){
                 sIndex++;
