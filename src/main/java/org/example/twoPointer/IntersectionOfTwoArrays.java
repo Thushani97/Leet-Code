@@ -10,6 +10,24 @@ public class IntersectionOfTwoArrays {
     }
 
     public static int[] intersection(int[] nums1, int[] nums2) {
+        boolean[] booleanArr = new boolean[1001];
+        for(int x:nums1){
+            booleanArr[x]=true;
+        }
+        int index=0;
+        int [] result = new int[1001];
+        int [] result2 = new int[Math.min(nums1.length,nums2.length)];
+
+        for(int y:nums2){
+            if(booleanArr[y]){
+                result[index++]=y;
+                booleanArr[y]=false; // avoid adding duplicate values
+            }
+        }
+        return Arrays.copyOf(result,index);
+    }
+
+    public static int[] intersection3(int[] nums1, int[] nums2) {
         Set<Integer> setNums1 = new HashSet<>(); // 1,2
 
         Set<Integer> outputSet = new HashSet<>(); // 2
