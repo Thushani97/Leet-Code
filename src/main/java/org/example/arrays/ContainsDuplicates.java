@@ -7,7 +7,17 @@ public class ContainsDuplicates {
     public static void main(String[] args){
 
     }
+
     public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int i : nums) {
+            if(!set.add(i)){ // set.add(i) -> true for a new element || false -> duplicate
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean containsDuplicate1(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int i : nums) {
             if(!set.contains(i)){
@@ -46,4 +56,3 @@ Example 3:
 Input: nums = [1,1,1,3,3,4,3,2,4,2]
 */
 
-Output: true
