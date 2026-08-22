@@ -14,13 +14,15 @@ public class ShortestDistanceToACharacter {
     public static int[] shortestToChar(String s, char c) {
         char[] arr = s.toCharArray();
         int[] output = new int[s.length()];
+        int eIndex = 0;
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
             int currentIndex= i;
             while (arr[currentIndex]!=c){
                 currentIndex++;
             }
-            output[index++]=currentIndex;
+            int previousEIndex = currentIndex;
+            output[index++]=Math.abs(currentIndex-i);
         }
         return output;
     }
