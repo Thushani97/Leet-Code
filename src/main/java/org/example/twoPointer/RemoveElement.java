@@ -26,7 +26,6 @@ public class RemoveElement {
             }
         }
 
-
         for (int i = 0; i < map.size(); i++) {
             nums[i]=map.get(i);
             System.out.println(map.get(i));
