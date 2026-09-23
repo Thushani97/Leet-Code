@@ -1,14 +1,47 @@
 package org.example.twoPointer;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class BackSpaceStringCompare {
 
     public static void main (String[] args){
 //        System.out.println(backspaceCompare1("ab#c","ad#c"));
-        System.out.println(backspaceCompare1("bxj##tw","bxo#j##tw"));
+        System.out.println(backspaceCompare("###bxj##tw","bxo#j##tw"));
     }
 
+    public static boolean backspaceCompare(String s, String t) {
+        char[] sArray = s.toCharArray();
+        char[] tArray = t.toCharArray();
+
+        String s1= getString(sArray);
+        String s2=getString(tArray);
+        return Objects.equals(s1, s2);
+    }
+
+    static String getString(char[] arr){
+        Deque<Character> st = new ArrayDeque<>();
+        int count = 0;
+        while (count< arr.length){
+            if(arr[count]!='#'){
+                st.addLast(arr[count]);
+
+            }else if(!st.isEmpty()){
+                st.removeLast();
+
+            }
+            count++;
+        }
+        String str = st.stream()
+                .map(x-> String.valueOf(x))
+                .collect(Collectors.joining());
+
+        return str;
+
+
+    }
     public static boolean backspaceCompare1(String s, String t) {
         char[] sArray = s.toCharArray();
         char[] tArray = t.toCharArray();
