@@ -16,6 +16,18 @@ public class SingleNumber {
     }
 
     public static int singleNumber(int[] nums) {
+
+        /*
+        *   XOR operation ->  1 ^ 1 = 0 | 0 ^ 0 = 0 | 1 ^ 0 = 1 | 0 ^ 1 = 1
+        *  Same operation works with numbers.
+        * */
+        int val = 0;
+        for (int i : nums) {
+            val ^=i;
+        }
+        return val; // output only one element
+    }
+    public static int singleNumber1(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int i : nums) {
             if (!set.add(i))
