@@ -2,15 +2,22 @@ package org.example.linkedlist;
 
 public class InsertValue {
     public static void main(){
-        ListNode head = new ListNode(1);
+        ListNode head = new ListNode(5);
         head.next = new ListNode(10);
-        head.next.next = new ListNode(20);
-        head.next.next.next = new ListNode(30);
+        head.next.next = new ListNode(15);
+        head.next.next.next = new ListNode(20);
 
-
-        insertValue(head,15);
+        printAllElements(head);
+//        insertValue(head,15);
     }
 
+    public static void printAllElements(ListNode listNode){
+        ListNode tem = listNode;
+        while (tem != null){
+            System.out.println(tem.val);
+            tem=tem.next;
+        }
+    }
     public static ListNode insertValue(ListNode list, int val){
         ListNode temp = new ListNode();
         ListNode newNode = new ListNode(val,temp);
