@@ -2,29 +2,42 @@ package org.example.linkedlist;
 
 public class TestLinkedList {
     public static void main(String[] args){
-        // Creation on nodes Method - 01
-        Node node1 = new Node(10);
-        Node node2 = new Node(20);
-        Node node3 = new Node(30);
-        node1.next = node2;
-        node2.next = node3;
+        Node head1 = new Node(5,new Node(10,new Node(15,new Node(20))));
 
-//        Creation of nodes Method = 02
-        Node head = new Node(100);
-        head.next = new Node(200);
-        head.next.next = new Node(300);
-        head.next.next.next = new Node(400);
+        Node head2 = new Node(100);
+        head2.next= new Node(110);
+        head2.next.next = new Node(120);
+        head2.next.next.next = new Node(130);
+
+        countNodes(head2);
+    }
+
+    public static void countNodes(Node head){
+        int count = 0;
+        Node temp = head;
+        while (temp!=null){
+            count++;
+            System.out.println(temp.val);
+            temp=temp.next;
+        }
+        System.out.println(count);
     }
 
 }
 
 
 class Node{
-    int data;
-    Node next;
+   int val;
+   Node next;
 
-    Node(int data){
-        this.data = data;
-        this.next = null;
+   Node(int val, Node next){
+       this.val = val;
+       this.next= next;
+   }
+    Node (int val){
+       this.val = val;
     }
+
+    Node(){}
+
 }

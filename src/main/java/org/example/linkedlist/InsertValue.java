@@ -36,8 +36,7 @@ public class InsertValue {
         return head; // return head
     }
 }
-
-class ListNode{
+ class ListNode{
     int val;
     ListNode next;
 
