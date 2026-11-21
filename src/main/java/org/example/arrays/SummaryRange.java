@@ -20,13 +20,6 @@ public class SummaryRange {
                 output.add(entry);
             }
         }
-        if (nums.length > 0) {
-            if (output.isEmpty() ||
-                    output.get(output.size() - 1).endsWith(String.valueOf(nums[nums.length - 1]))) {
-
-                output.add(String.valueOf(nums[nums.length - 1]));
-            }
-        }
 
         return output;
     }
